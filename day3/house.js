@@ -1,6 +1,6 @@
- var roof = function(d,floors) {
+ var roof = function(d) {
     d.move('home');
-    d.up(6+(4*(floors)));
+    d.up(6);
     d.prism0(blocks.oak,20,20);
     d.fwd(12);
     d.turn();
@@ -28,16 +28,6 @@ exports.house = function(numFloors) {
     d.up();
     d.turn();
     d.door2();
-    d.move('home');
-    for(curFloor = 0; curFloor < numFloors; curFloor++)
-    {
-        d.up(6+(curFloor*4));
-        d.box0(blocks.stone,20,4,20);
-        d.fwd();
-        d.right();
-        d.box(blocks.oak,18,1,18);
-        d.move('home');
-    }
     roof(d,numFloors);
 };
 
